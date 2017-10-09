@@ -1,0 +1,56 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class='row'>
+        <div class='col-md-2'>Filter by:</div>
+        <div class='col-md-4'>
+            <input type='text' [(ngModel)]='listFilter' />
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-6'>
+            <h3>Filtered by: {{listFilter}}</h3>
+        </div>
+    </div>
+    <div class='table-responsive'>
+        <table class='table' *ngIf='addresses && addresses.length'>
+            <thead>
+                <tr>
+                    <th>Address Id</th>
+                    <th>Source</th>
+                    <th>Floor</th>
+                    <th>Street No</th>
+                    <th>Unit No</th>
+                    <th>Street Name</th>
+                    <th>Street suffix</th>
+                    <th>Suburb</th>
+                    <th>Town</th>
+                    <th>City</th>
+                    <th>PostCode</th>
+                    <th>Location descriptor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let address of filteredAddresses'>
+                    <td>{{ address.addressID}}</td>
+                    <td>{{ address.source}}</td>
+                    <td>{{ address.floor }}</td>
+                    <td>{{ address.streetAlphsNumeric }}</td>
+                    <td>{{ address.unitAlphsNumeric }}</td>
+                    <td>
+                        <a [routerLink]="['/addresses', address.addressID]">
+                    {{ address.streetName }}
+                     </a>
+                    </td>
+                    <td>{{ address.streetSuffix}}</td>
+                    <td>{{ address.suburb}}</td>
+                    <td>{{ address.town }}</td>
+                    <td>{{ address.city }}</td>
+                    <td>{{ address.postcode }}</td>
+                    <td>{{ address.locationDescriptor }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

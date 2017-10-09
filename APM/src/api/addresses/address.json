@@ -1,0 +1,30 @@
+[
+	{
+        "addressID": "123",
+        "source": "someone",
+        "floor": "one",
+        "streetAlphsNumeric": "20",
+        "unitAlphsNumeric": "2",
+        "streetName": "Queen",
+        "streetSuffix": "St",
+        "suburb": "Centrol",
+        "town": "CBD",
+        "city": "AKL",
+        "postcode": "1000",
+        "locationDescriptor": "Business office"
+    },
+    {
+        "addressID": "124",
+        "source": "you",
+        "floor": "one",
+        "streetAlphsNumeric": "20",
+        "unitAlphsNumeric": "2",
+        "streetName": "Richardson road",
+        "streetSuffix": "St",
+        "suburb": "Centrol",
+        "town": "CBD",
+        "city": "AKL",
+        "postcode": "1000",
+        "locationDescriptor": "Business office"
+    }
+]

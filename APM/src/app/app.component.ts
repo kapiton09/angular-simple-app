@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import { ProductService } from './products/product.service';
+import { AddressService } from './addresses/address.service';
 
 @Component({
 selector: 'pm-root',
@@ -11,7 +12,8 @@ template: `
         <ul class='nav navbar-nav'>
             <li><a [routerLink]="['/welcome']">Home</a></li>
             <li><a [routerLink]="['/products']">Product List</a></li>
-        </ul>
+            <li><a [routerLink]="['/addresses']">Address List</a></li>
+            </ul>
     </div>
 </nav>
 <div class='container'>
@@ -19,9 +21,9 @@ template: `
 </div>
 </div>
 `,
-providers: [ProductService]
+providers: [ProductService, AddressService]
 })
 
 export class AppComponent {
-pageTitle: string = 'Acme Product Mangement';
+pageTitle: string = 'FeeniX API Client';
 }

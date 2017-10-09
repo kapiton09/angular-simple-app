@@ -1,0 +1,70 @@
+<div class='panel panel-primary' *ngIf='address'>
+    <div class='panel-heading'>
+        {{pageTitle + ': ' + address.streetAlphsNumeric}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Address Id:</div>
+                    <div class='col-md-6'>{{address.addressID}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Source:</div>
+                    <div class='col-md-6'>{{address.source}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Floor:</div>
+                    <div class='col-md-6'>{{address.floor}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Street No:</div>
+                    <div class='col-md-6'>{{address.streetAlphsNumeric}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Unit No:</div>
+                    <div class='col-md-6'>{{address.unitAlphsNumeric}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Street Name:</div>
+                    <div class='col-md-6'>{{address.streetName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Street suffix:</div>
+                    <div class='col-md-6'>{{address.streetSuffix}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Suburb:</div>
+                    <div class='col-md-6'>{{address.suburb}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Town:</div>
+                    <div class='col-md-6'>{{address.town}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>City:</div>
+                    <div class='col-md-6'>{{address.city}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>PostCode:</div>
+                    <div class='col-md-6'>{{address.postcode}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Location descriptor:</div>
+                    <div class='col-md-6'>{{address.locationDescriptor}}</div>
+                </div>
+
+            </div>
+
+            <div class='col-md-6'>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>
