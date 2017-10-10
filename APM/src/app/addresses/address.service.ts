@@ -10,8 +10,8 @@ import { IAddress } from './address';
 
 @Injectable()
 export class AddressService {
-  private _addressUrl = './api/addresses/address.json';
-  // private _addressUrl = 'http://localhost:4041/api/address/123';
+   // private _addressUrl = './api/addresses/address.json';
+   private _addressUrl = 'http://localhost:4041/api/address/';
 
     constructor(private _http: HttpClient) { }
 
