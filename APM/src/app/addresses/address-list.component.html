@@ -3,17 +3,17 @@
         {{pageTitle}}
     </div>
     <div class='row'>
-        <div class='col-md-2'>Filter by:</div>
-        <div class='col-md-4'>
+        <div class='col-md-2 dmargin'>Filter by:</div>
+        <div class='col-md-4 dmargin'>
             <input type='text' [(ngModel)]='listFilter' />
         </div>
     </div>
     <div class='row'>
-        <div class='col-md-6'>
-            <h3>Filtered by: {{listFilter}}</h3>
+            <div class='col-md-6'>
+                <h3>Filtered by: {{listFilter}}</h3>
+            </div>
         </div>
-    </div>
-    <div class='table-responsive'>
+        <div class='table-responsive'>
         <table class='table' *ngIf='addresses && addresses.length'>
             <thead>
                 <tr>
@@ -40,8 +40,8 @@
                     <td>{{ address.unitAlphsNumeric }}</td>
                     <td>
                         <a [routerLink]="['/addresses', address.addressID]">
-                    {{ address.streetName }}
-                     </a>
+                            {{ address.streetName }}
+                        </a>
                     </td>
                     <td>{{ address.streetSuffix}}</td>
                     <td>{{ address.suburb}}</td>
