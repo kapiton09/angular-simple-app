@@ -5,18 +5,33 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
+// tslint:disable-next-line:import-spacing
+import {Http, Response, Headers, ResponseOptions, ResponseOptionsArgs, RequestOptions} from '@angular/http';
 
 import { IAddress } from './address';
 
 @Injectable()
 export class AddressService {
+
+        // tslint:disable-next-line:max-line-length
+   token: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3RhbmRhcmRDdXN0b21lciIsImlhdCI6MTUwNzYwNDM1N30.KapqmRMLu9xbk9c6iKj-2R0tFkCRJpnnF7PY_tCDzbk';
    // private _addressUrl = './api/addresses/address.json';
    private _addressUrl = 'http://localhost:4041/api/address/';
 
-    constructor(private _http: HttpClient) { }
+    constructor(private _http: Http) {
+
+    }
+
+    setHeaders(): Headers {
+        const headers = new Headers();
+        headers.set('API_key', this.token);
+        return headers;
+    }
 
     getAddresses(): Observable<IAddress[]> {
-        return this._http.get<IAddress[]>(this._addressUrl)
+        let reqOptions: ResponseOptionsArgs = {headers: this.setHeaders()};
+        const options = new RequestOptions(reqOptions);
+        return this._http.get(this._addressUrl, options)
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }

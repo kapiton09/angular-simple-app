@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { AddressGuardService } from './address-guard.service';
 import { AddressService } from './address.service';
 import { SharedModule } from './../shared/shared.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   imports: [
