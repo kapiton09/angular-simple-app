@@ -32,6 +32,7 @@ export class AddressService {
         let reqOptions: ResponseOptionsArgs = {headers: this.setHeaders()};
         const options = new RequestOptions(reqOptions);
         return this._http.get(this._addressUrl, options)
+            .map((response: Response) => response.json())
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
